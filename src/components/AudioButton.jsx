@@ -7,6 +7,32 @@ export default function AudioButton({ text, size = 'medium', color = '#fff' }) {
     const volume = state.settings.seVolume / 100;
 
     const [speaking, setSpeaking] = useState(false);
+    const [selectedVoice, setSelectedVoice] = useState(null);
+
+    useEffect(() => {
+        // Function to select the best voice
+        const loadVoices = () => {
+            const voices = window.speechSynthesis.getVoices();
+            // Prioritize: Google US English > Samantha (Mac) > other en-US > any en
+            const bestVoice = voices.find(v => v.name === 'Google US English') ||
+                voices.find(v => v.name === 'Samantha') ||
+                voices.find(v => v.lang === 'en-US' && v.name.includes('Premium')) ||
+                voices.find(v => v.lang === 'en-US') ||
+                voices.find(v => v.lang.startsWith('en'));
+
+            setSelectedVoice(bestVoice);
+        };
+
+        // Load immediately
+        loadVoices();
+
+        // And wait for async load (Chrome requires this)
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+
+        return () => {
+            window.speechSynthesis.onvoiceschanged = null;
+        };
+    }, []);
 
     const speak = (e) => {
         e.stopPropagation();
@@ -18,7 +44,12 @@ export default function AudioButton({ text, size = 'medium', color = '#fff' }) {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'en-US';
         utterance.volume = volume;
-        utterance.rate = 0.9; // Slightly slower for clarity
+        utterance.rate = 1.0; // Normal speed for natural flow
+        utterance.pitch = 1.0;
+
+        if (selectedVoice) {
+            utterance.voice = selectedVoice;
+        }
 
         utterance.onstart = () => setSpeaking(true);
         utterance.onend = () => setSpeaking(false);
