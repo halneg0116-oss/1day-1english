@@ -9,18 +9,18 @@ import AudioButton from './AudioButton';
 export default function Quiz() {
     const { categoryId } = useParams();
     const navigate = useNavigate();
-    const { incrementQuizCount, newUnlock, clearNewUnlock } = useGame();
+    const { incrementQuizCount, unlockItem, newUnlock, clearNewUnlock, state, recordResult } = useGame();
 
     const [questions, setQuestions] = useState([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [showResult, setShowResult] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
     const [finished, setFinished] = useState(false);
     const [history, setHistory] = useState([]);
     const [showUnlockModal, setShowUnlockModal] = useState(false);
+    const [clickedWrongOption, setClickedWrongOption] = useState(null); // Track which wrong option was clicked for explanation
 
-    // Initialize Quiz
     useEffect(() => {
         let qs = [];
         if (categoryId === 'random') {
@@ -56,10 +56,12 @@ export default function Quiz() {
     };
 
     const handleNext = useCallback(() => {
-        if (currentIndex < questions.length - 1) {
-            setCurrentIndex(prev => prev + 1);
-            setSelectedOption(null);
-            setShowResult(false);
+        setShowResult(false);
+        setSelectedOption(null);
+        setClickedWrongOption(null); // Reset explanation interaction
+
+        if (currentQuestionIndex < questions.length - 1) {
+            setCurrentQuestionIndex(prev => prev + 1);
         } else {
             // Quiz Finished
             incrementQuizCount(); // Increment count in context
@@ -191,31 +193,57 @@ export default function Quiz() {
                                 }
 
                                 return (
-                                    <motion.button
-                                        key={option.id}
-                                        whileTap={{ scale: 0.98 }}
-                                        onClick={() => handleOptionSelect(option.id)}
-                                        disabled={showResult}
-                                        style={{
-                                            padding: '1rem',
-                                            borderRadius: '12px',
-                                            border: `2px solid ${borderColor}`,
-                                            backgroundColor: bgColor,
-                                            cursor: showResult ? 'default' : 'pointer',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '1rem',
-                                            textAlign: 'left',
-                                            color: 'var(--color-night-navy)',
-                                            transition: 'background-color 0.3s'
-                                        }}
-                                    >
-                                        <span style={{ fontSize: '1.5rem' }}>{option.icon}</span>
-                                        <div>
-                                            <div style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{option.text}</div>
-                                            <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>{option.nuance}</div>
-                                        </div>
-                                    </motion.button>
+                                    <div key={option.id} style={{ position: 'relative' }}>
+                                        <motion.button
+                                            whileTap={!showResult ? { scale: 0.98 } : {}}
+                                            onClick={() => handleOptionSelect(option.id)}
+                                            style={{
+                                                width: '100%',
+                                                padding: '1rem',
+                                                borderRadius: '12px',
+                                                border: `2px solid ${borderColor}`,
+                                                backgroundColor: bgColor,
+                                                cursor: showResult ? 'pointer' : 'pointer', // Always pointer to indicate interactivity
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '1rem',
+                                                textAlign: 'left',
+                                                color: 'var(--color-night-navy)',
+                                                transition: 'background-color 0.3s',
+                                                opacity: (showResult && option.id !== question.correctId && option.id !== selectedOption) ? 0.6 : 1
+                                            }}
+                                        >
+                                            <span style={{ fontSize: '1.5rem' }}>{option.icon}</span>
+                                            <div>
+                                                <div style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{option.text}</div>
+                                                <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>{option.nuance}</div>
+                                            </div>
+                                        </motion.button>
+
+                                        {/* Explanation Bubble for Wrong Options */}
+                                        {showResult && clickedWrongOption === option.id && option.id !== question.correctId && (
+                                            <motion.div
+                                                initial={{ opacity: 0, y: -10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                style={{
+                                                    position: 'absolute',
+                                                    top: '110%',
+                                                    left: '0',
+                                                    right: '0',
+                                                    zIndex: 10,
+                                                    backgroundColor: '#333',
+                                                    color: '#fff',
+                                                    padding: '0.8rem',
+                                                    borderRadius: '8px',
+                                                    fontSize: '0.9rem',
+                                                    boxShadow: '0 4px 10px rgba(0,0,0,0.2)'
+                                                }}
+                                            >
+                                                <div style={{ position: 'absolute', top: '-6px', left: '20px', width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderBottom: '6px solid #333' }}></div>
+                                                💡 {option.reason || `${option.nuance} という意味なので、この文脈では少し違います。`}
+                                            </motion.div>
+                                        )}
+                                    </div>
                                 );
                             })}
                         </div>

@@ -1238,6 +1238,109 @@ export const QUIZ_QUESTIONS = [
             { speaker: "You", text: "Look at his new car!" },
             { speaker: "Friend", text: "Wow, that's sick!" }
         ]
+    },
+    // ========== NEW EXPANSION ==========
+    {
+        id: 111,
+        category: 'verbs',
+        text: "会議を始めるよ",
+        englishText: "Let's start the meeting",
+        situation: "会議の開始を告げる時",
+        icon: '🎬',
+        options: [
+            { id: 'a', text: "start", icon: '▶️', nuance: '始める（一般的）', reason: 'Startは最も一般的な「始める」です。' },
+            { id: 'b', text: "begin", icon: '🧐', nuance: '始める（硬め）', reason: 'Beginは少し硬い表現です。日常会話ではStartが自然です。' },
+            { id: 'c', text: "commence", icon: '📜', nuance: '開始する（超硬）', reason: 'Commenceは式典などで使う非常に硬い言葉です。' }
+        ],
+        correctId: 'a',
+        explanation: "日常的な会議ならStartでOK。Beginでも間違いではないけど、少しフォーマルな響きになるよ。"
+    },
+    {
+        id: 112,
+        category: 'verbs',
+        text: "その本、面白いと思うよ (推測)",
+        englishText: "I guess that book is interesting",
+        situation: "確信はないけどそう思う時",
+        icon: '🤔',
+        options: [
+            { id: 'a', text: "think", icon: '🧠', nuance: '思う（自分の意見）', reason: 'Thinkは自分の意見として「思う」時に使います。' },
+            { id: 'b', text: "guess", icon: '🎲', nuance: '推測する', reason: 'Guessは根拠が薄い「推測」です。' },
+            { id: 'c', text: "believe", icon: '🙏', nuance: '信じる', reason: 'Believeは強い信念や確信がある時に使います。' }
+        ],
+        correctId: 'b',
+        explanation: "根拠がなくて「多分そうなんじゃないかな」という時はGuessがぴったり。"
+    },
+    {
+        id: 113,
+        category: 'verbs',
+        text: "彼は将来有望に見える",
+        englishText: "He seems promising",
+        situation: "外見や様子から判断する時",
+        icon: '👀',
+        options: [
+            { id: 'a', text: "looks", icon: '👁️', nuance: '見える（視覚）', reason: 'Looksはパッと見の外見について言及する時に使います。' },
+            { id: 'b', text: "seems", icon: '☁️', nuance: '思われる（状況）', reason: 'Seemsは状況や雰囲気を含めた主観的な「〜のようだ」です。' },
+            { id: 'c', text: "appears", icon: '✨', nuance: '見える（客観）', reason: 'Appearsは事実に基づいて客観的に見える時に使います。' }
+        ],
+        correctId: 'b',
+        explanation: "Seemsは「（なんとなく）〜のように思われる」という主観的な判断に便利だよ。"
+    },
+    {
+        id: 1011,
+        category: 'native',
+        text: "やっぱりやめた (計画変更)",
+        englishText: "I changed my mind",
+        situation: "決断を変える時",
+        icon: '🔄',
+        options: [
+            { id: 'a', text: "I stopped", icon: '🛑', nuance: '動作を止めた', reason: 'Stopは動作を停止することです。考えを変える時は使いません。' },
+            { id: 'b', text: "I changed my mind", icon: '🧠', nuance: '気が変わった', reason: '直訳で「心を変えた」＝気が変わった、になります。' },
+            { id: 'c', text: "I quit", icon: '🚪', nuance: '辞める', reason: 'Quitは仕事や習慣を辞める時に使います。' }
+        ],
+        correctId: 'b',
+        explanation: "「気が変わった」は英語で Change my mind と言うんだ。よく使うよ。",
+        dialogue: [
+            { speaker: "Friend", text: "Are you buying that shirt?" },
+            { speaker: "You", text: "Nah, I changed my mind." }
+        ]
+    },
+    {
+        id: 1012,
+        category: 'native',
+        text: "これ、おごるよ (私が払う)",
+        englishText: "It's on me",
+        situation: "会計を支払う時",
+        icon: '💳',
+        options: [
+            { id: 'a', text: "I pay", icon: '💰', nuance: '私が払う（事実）', reason: '文法的には合っていますが、おごる時の決まり文句ではありません。' },
+            { id: 'b', text: "It's on me", icon: '☝️', nuance: '私のおごりだ', reason: '「私のツケにしておいて」というニュアンスから来ています。' },
+            { id: 'c', text: "My treat", icon: '🎁', nuance: '私のおもてなし（やや丁寧）', reason: 'My treatも正解ですが、It\'s on meの方がよりカジュアルによく使われます。' }
+        ],
+        correctId: 'b',
+        explanation: "Barなどで「ここは俺が持つよ」という時に It's on me と言うとかっこいい！",
+        dialogue: [
+            { speaker: "Friend", text: "How much is my share?" },
+            { speaker: "You", text: "Don't worry, it's on me." }
+        ]
+    },
+    {
+        id: 1013,
+        category: 'native',
+        text: "久しぶり！",
+        englishText: "Long time no see",
+        situation: "友人と再会した時",
+        icon: '👋',
+        options: [
+            { id: 'a', text: "Long time no see", icon: '🐢', nuance: '久しぶり', reason: '定番の挨拶です。' },
+            { id: 'b', text: "Nice to meet you", icon: '🤝', nuance: 'はじめまして', reason: '初対面の挨拶です。再会時には使いません。' },
+            { id: 'c', text: "See you later", icon: '🕰️', nuance: 'またね', reason: '別れ際の挨拶です。' }
+        ],
+        correctId: 'a',
+        explanation: "文法的には変だけど、もう完全に定着しているフレーズ。久しぶりの友達にはこれ！",
+        dialogue: [
+            { speaker: "You", text: "Hey! Long time no see!" },
+            { speaker: "Friend", text: "I know! It's been ages." }
+        ]
     }
 ];
 
@@ -1247,11 +1350,49 @@ export function getRandomQuestions(count = 5) {
     return shuffled.slice(0, Math.min(count, QUIZ_QUESTIONS.length));
 }
 
-// カテゴリ別に問題を取得する関数
-export function getQuestionsByCategory(categoryId, count = 5) {
+// カテゴリ別に問題を取得する関数 (Adaptive Learning)
+export function getQuestionsByCategory(categoryId, count = 5, learningState = null) {
     const categoryQuestions = QUIZ_QUESTIONS.filter(q => q.category === categoryId);
-    const shuffled = [...categoryQuestions].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, Math.min(count, categoryQuestions.length));
+
+    if (!learningState) {
+        // Fallback to simple random if no state provided
+        const shuffled = [...categoryQuestions].sort(() => Math.random() - 0.5);
+        return shuffled.slice(0, Math.min(count, categoryQuestions.length));
+    }
+
+    const { wrongQuestionIds, completedQuestionIds } = learningState;
+
+    // 1. Prioritize Wrong Questions (Review)
+    const wrongQuestions = categoryQuestions.filter(q => wrongQuestionIds.includes(q.id));
+
+    // 2. Then New Questions (Unseen)
+    const newQuestions = categoryQuestions.filter(q =>
+        !completedQuestionIds.includes(q.id) && !wrongQuestionIds.includes(q.id)
+    );
+
+    // 3. Then mastered/completed questions (Review/Filler)
+    const masteredQuestions = categoryQuestions.filter(q =>
+        completedQuestionIds.includes(q.id) && !wrongQuestionIds.includes(q.id)
+    );
+
+    let selected = [];
+
+    // Shuffle each group
+    const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+
+    // Logic: Fill with Wrong -> New -> Mastered
+    selected = [...selected, ...shuffle(wrongQuestions)];
+
+    if (selected.length < count) {
+        selected = [...selected, ...shuffle(newQuestions)];
+    }
+
+    if (selected.length < count) {
+        selected = [...selected, ...shuffle(masteredQuestions)];
+    }
+
+    // Limit to requested count
+    return selected.slice(0, Math.min(count, categoryQuestions.length));
 }
 
 // 特定のIDの問題を取得

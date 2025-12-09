@@ -54,6 +54,11 @@ export function GameProvider({ children }) {
                 bgmVolume: 50,
                 seVolume: 50,
                 notificationsEnabled: true
+            },
+            // New: Adaptive Learning State
+            learningState: {
+                wrongQuestionIds: [],
+                completedQuestionIds: []
             }
         };
     });
@@ -199,6 +204,36 @@ export function GameProvider({ children }) {
         }
     };
 
+    const recordResult = (questionId, isCorrect) => {
+        setState(prev => {
+            const currentLearning = prev.learningState || { wrongQuestionIds: [], completedQuestionIds: [] };
+            let newWrong = [...currentLearning.wrongQuestionIds];
+            let newCompleted = [...currentLearning.completedQuestionIds];
+
+            if (isCorrect) {
+                // Remove from wrong list if it was there (mastered)
+                newWrong = newWrong.filter(id => id !== questionId);
+                // Add to completed if not already there
+                if (!newCompleted.includes(questionId)) {
+                    newCompleted.push(questionId);
+                }
+            } else {
+                // Add to wrong list if not already there
+                if (!newWrong.includes(questionId)) {
+                    newWrong.push(questionId);
+                }
+            }
+
+            return {
+                ...prev,
+                learningState: {
+                    wrongQuestionIds: newWrong,
+                    completedQuestionIds: newCompleted
+                }
+            };
+        });
+    };
+
     const value = {
         state,
         newUnlock,
@@ -211,6 +246,7 @@ export function GameProvider({ children }) {
         incrementQuizCount,
         updateSettings,
         resetAllData,
+        recordResult, // New export
         getRank: () => calculateRank(state.stats.quizCount),
         getNextMilestone: () => getNextMilestone(state.stats.quizCount)
     };
