@@ -71,15 +71,7 @@ export default function Quiz() {
             recordResult(currentQ.id, correct);
         }
     };
-    // Note: I don't need to rewrite handleOptionSelect fully here if I only target the useEffect and the guard.
-    // Let's target the useEffect first.
 
-    // ...
-
-    if (questions.length === 0) return <div style={{ color: '#fff', textAlign: 'center', paddingTop: '2rem' }}>Loading...</div>;
-
-    const question = questions[currentQuestionIndex];
-    if (!question) return <div style={{ color: '#fff', textAlign: 'center', paddingTop: '2rem' }}>Error loading question</div>;
 
     const handleNext = useCallback(() => {
         setShowResult(false);
