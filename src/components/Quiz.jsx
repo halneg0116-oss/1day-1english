@@ -22,15 +22,28 @@ export default function Quiz() {
     const [clickedWrongOption, setClickedWrongOption] = useState(null); // Track which wrong option was clicked for explanation
 
     useEffect(() => {
-        let qs = [];
-        if (categoryId === 'random') {
-            qs = getRandomQuestions(5);
-        } else {
-            // Pass learningState for adaptive selection
-            const learningState = state.learningState || { wrongQuestionIds: [], completedQuestionIds: [] };
-            qs = getQuestionsByCategory(categoryId, 5, learningState);
+        try {
+            let qs = [];
+            if (categoryId === 'random') {
+                qs = getRandomQuestions(5);
+            } else {
+                // Pass learningState for adaptive selection
+                const learningState = state.learningState || { wrongQuestionIds: [], completedQuestionIds: [] };
+                qs = getQuestionsByCategory(categoryId, 5, learningState);
+            }
+
+            // Final safety check
+            if (!qs || qs.length === 0) {
+                console.warn("No questions found, falling back to random");
+                qs = getRandomQuestions(5);
+            }
+
+            setQuestions(qs);
+        } catch (e) {
+            console.error("Error loading questions:", e);
+            // Fallback to purely random on error to prevent blank screen
+            setQuestions(getRandomQuestions(5));
         }
-        setQuestions(qs);
     }, [categoryId]); // Run once on mount (or cat change)
 
     // Handle Unlocks

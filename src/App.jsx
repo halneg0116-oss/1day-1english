@@ -1,31 +1,37 @@
+```javascript
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GameProvider } from './context/GameContext';
-import Layout from './components/Layout';
+import { AnimatePresence } from 'framer-motion';
 import Home from './components/Home';
-import CategorySelect from './components/CategorySelect';
 import Quiz from './components/Quiz';
-import Review from './components/Review';
 import Collection from './components/Collection';
+import Review from './components/Review';
 import Settings from './components/Settings';
+import Layout from './components/Layout';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
     return (
         <GameProvider>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Layout />}>
-                        <Route index element={<Home />} />
-                        <Route path="categories" element={<CategorySelect />} />
-                        <Route path="review" element={<Review />} />
-                        <Route path="collection" element={<Collection />} />
-                        <Route path="settings" element={<Settings />} />
-                    </Route>
-                    <Route path="/quiz/:categoryId" element={<Quiz />} />
-                </Routes>
-            </BrowserRouter>
+            <Router>
+                <div className="app-container">
+                    <Layout>
+                        <ErrorBoundary>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/quiz/:categoryId" element={<Quiz />} />
+                                <Route path="/collection" element={<Collection />} />
+                                <Route path="/review" element={<Review />} />
+                                <Route path="/settings" element={<Settings />} />
+                            </Routes>
+                        </ErrorBoundary>
+                    </Layout>
+                </div>
+            </Router>
         </GameProvider>
     );
 }
 
 export default App;
+```
