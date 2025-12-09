@@ -1062,7 +1062,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "I agree", icon: '🤝', nuance: '賛成する' }
         ],
         correctId: 'b',
-        explanation: "I'm downは「賛成する」「参加する」という意味の軽いスラング。友達との会話でよく使うよ。"
+        explanation: "I'm downは「賛成する」「参加する」という意味の軽いスラング。友達との会話でよく使うよ。",
+        dialogue: [
+            { speaker: "Friend", text: "Want to grab some burgers?" },
+            { speaker: "You", text: "I'm down! Let's go." }
+        ]
     },
     {
         id: 1002,
@@ -1077,7 +1081,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "Excuse me", icon: '🙋', nuance: '失礼' }
         ],
         correctId: 'b',
-        explanation: "My badは「あ、ごめん」「私のミス」という軽い謝罪。深刻な時には使わないでね。"
+        explanation: "My badは「あ、ごめん」「私のミス」という軽い謝罪。深刻な時には使わないでね。",
+        dialogue: [
+            { speaker: "Friend", text: "You stepped on my foot!" },
+            { speaker: "You", text: "Oops, my bad." }
+        ]
     },
     {
         id: 1003,
@@ -1092,7 +1100,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "You are welcome", icon: '🎩', nuance: 'どういたしまして' }
         ],
         correctId: 'b',
-        explanation: "No worriesは「全然大丈夫」「気にしないで」という、とても便利な万能フレーズだよ。"
+        explanation: "No worriesは「全然大丈夫」「気にしないで」という、とても便利な万能フレーズだよ。",
+        dialogue: [
+            { speaker: "Colleague", text: "Sorry for the late reply." },
+            { speaker: "You", text: "No worries at all." }
+        ]
     },
     {
         id: 1004,
@@ -1107,7 +1119,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "Yes", icon: '⭕', nuance: 'はい' }
         ],
         correctId: 'b',
-        explanation: "You betは「もちろん」「どういたしまして」という意味。自信を持って答える時に使おう。"
+        explanation: "You betは「もちろん」「どういたしまして」という意味。自信を持って答える時に使おう。",
+        dialogue: [
+            { speaker: "Boss", text: "Can you finish this by 5?" },
+            { speaker: "You", text: "You bet!" }
+        ]
     },
     {
         id: 1005,
@@ -1122,7 +1138,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "Hope so", icon: '🙏', nuance: 'そう願う' }
         ],
         correctId: 'b',
-        explanation: "Fingers crossedは指をクロスさせて幸運を祈るジェスチャーから。「上手くいきますように」という意味だよ。"
+        explanation: "Fingers crossedは指をクロスさせて幸運を祈るジェスチャーから。「上手くいきますように」という意味だよ。",
+        dialogue: [
+            { speaker: "You", text: "I have an interview today." },
+            { speaker: "Friend", text: "Good luck! Fingers crossed." }
+        ]
     },
     {
         id: 1006,
@@ -1137,7 +1157,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "Heads up", icon: '🗣️', nuance: '知らせ/警告' }
         ],
         correctId: 'c',
-        explanation: "Heads upは「事前の知らせ」「警告」という意味。「ちょっと言っておくけど」という感じで使うよ。"
+        explanation: "Heads upは「事前の知らせ」「警告」という意味。「ちょっと言っておくけど」という感じで使うよ。",
+        dialogue: [
+            { speaker: "Colleague", text: "Just a heads up, the meeting is cancelled." },
+            { speaker: "You", text: "Thanks for telling me." }
+        ]
     },
     {
         id: 1007,
@@ -1152,7 +1176,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "I'm full", icon: '🈵', nuance: 'お腹いっぱい' }
         ],
         correctId: 'b',
-        explanation: "Swampedは「沼に沈む」こと。仕事などが山積みで身動きが取れないくらい忙しい時に使うよ。"
+        explanation: "Swampedは「沼に沈む」こと。仕事などが山積みで身動きが取れないくらい忙しい時に使うよ。",
+        dialogue: [
+            { speaker: "Friend", text: "Dinner tonight?" },
+            { speaker: "You", text: "Can't. I'm totally swamped." }
+        ]
     },
     {
         id: 1008,
@@ -1167,7 +1195,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "Go home", icon: '🏠', nuance: '帰る' }
         ],
         correctId: 'b',
-        explanation: "Call it a dayは「今日はこれで終わりにする」という決まり文句。残業を切り上げる時にぴったり。"
+        explanation: "Call it a dayは「今日はこれで終わりにする」という決まり文句。残業を切り上げる時にぴったり。",
+        dialogue: [
+            { speaker: "You", text: "It's already 8 PM." },
+            { speaker: "Colleague", text: "Yeah, let's call it a day." }
+        ]
     },
     {
         id: 1009,
@@ -1182,7 +1214,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "Just do it", icon: '🏃', nuance: 'とりあえずやる' }
         ],
         correctId: 'b',
-        explanation: "Play it by earは、楽譜を見ずに耳コピで演奏することから、「臨機応変にやる」「様子を見て決める」という意味。"
+        explanation: "Play it by earは、楽譜を見ずに耳コピで演奏することから、「臨機応変にやる」「様子を見て決める」という意味。",
+        dialogue: [
+            { speaker: "Friend", text: "What's the plan for tomorrow?" },
+            { speaker: "You", text: "Let's just play it by ear." }
+        ]
     },
     {
         id: 1010,
@@ -1197,7 +1233,11 @@ export const QUIZ_QUESTIONS = [
             { id: 'c', text: "It's bad", icon: '👎', nuance: '悪い' }
         ],
         correctId: 'a',
-        explanation: "Sickは本来「病気」だけど、スラングでは「最高」「ヤバい（かっこいい）」という意味で若者がよく使うよ。"
+        explanation: "Sickは本来「病気」だけど、スラングでは「最高」「ヤバい（かっこいい）」という意味で若者がよく使うよ。",
+        dialogue: [
+            { speaker: "You", text: "Look at his new car!" },
+            { speaker: "Friend", text: "Wow, that's sick!" }
+        ]
     }
 ];
 

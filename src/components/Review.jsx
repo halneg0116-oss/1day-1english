@@ -3,6 +3,7 @@ import { useGame } from '../context/GameContext';
 import { REVIEW_ITEMS } from '../data/reviewItems';
 import SwipeCard from './SwipeCard';
 import { motion } from 'framer-motion';
+import AudioButton from './AudioButton';
 
 export default function Review() {
     const { state, markAsRemembered, markAsLater } = useGame();
@@ -170,7 +171,10 @@ export default function Review() {
                             }}>
                                 <span style={{ fontSize: '2rem' }}>{item.icon}</span>
                                 <div style={{ flex: 1 }}>
-                                    <div style={{ fontWeight: 'bold' }}>{item.text}</div>
+                                    <div style={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                        {item.text}
+                                        <AudioButton text={item.text} size="small" />
+                                    </div>
                                     <div style={{ fontSize: '0.85rem', opacity: 0.7 }}>{item.meaning}</div>
                                 </div>
                                 {isRemembered && <span style={{ color: '#4CAF50' }}>✓</span>}

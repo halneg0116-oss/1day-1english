@@ -105,10 +105,18 @@ export default function Collection() {
                                 left: position.left,
                                 fontSize: '3rem',
                                 cursor: 'pointer',
-                                filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))'
+                                filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))',
+                                zIndex: 10
                             }}
                             whileHover={{ scale: 1.2, rotate: 10 }}
                             whileTap={{ scale: 0.9 }}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                const englishName = item.englishName || item.name;
+                                // Simple toast or alert for now. Could be improved with a custom modal.
+                                // Using standard alert for MVP or could add a local state for a toast.
+                                alert(`${englishName}\n(${item.name})`);
+                            }}
                         >
                             {item.icon}
                         </motion.div>

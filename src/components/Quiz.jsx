@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { getQuestionsByCategory, getRandomQuestions, getQuestionById } from '../data/quizQuestions';
 import { useGame } from '../context/GameContext';
 import QuizComplete from './QuizComplete';
+import AudioButton from './AudioButton';
 
 export default function Quiz() {
     const { categoryId } = useParams();
@@ -239,25 +240,59 @@ export default function Quiz() {
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                                     <div style={{ fontSize: '2rem' }}>{isCorrect ? '✅ 正解！' : '😢 残念...'}</div>
                                 </div>
+
+                                {question.englishText && (
+                                    <div style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        backgroundColor: 'rgba(0,0,0,0.1)',
+                                        padding: '0.5rem',
+                                        borderRadius: '8px',
+                                        marginBottom: '0.5rem'
+                                    }}>
+                                        <span style={{ fontWeight: 'bold', color: '#fff' }}>{question.englishText}</span>
+                                        <AudioButton text={question.englishText} />
+                                    </div>
+                                )}
+
                                 <p style={{ fontSize: '1rem', lineHeight: 1.5, marginBottom: '0.5rem' }}>
                                     {question.explanation}
                                 </p>
-                                <p style={{
-                                    fontSize: '0.9rem',
-                                    fontStyle: 'italic',
-                                    opacity: 0.9,
-                                    borderTop: '1px solid rgba(255,255,255,0.3)',
-                                    marginTop: '0.5rem',
-                                    paddingTop: '0.5rem'
-                                }}>
-                                    {question.englishText}
-                                </p>
+
+                                {/* Dialogue Display */}
+                                {question.dialogue && (
+                                    <div style={{
+                                        backgroundColor: 'rgba(0,0,0,0.2)',
+                                        padding: '1rem',
+                                        borderRadius: '8px',
+                                        marginTop: '1rem',
+                                        textAlign: 'left'
+                                    }}>
+                                        <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '0.9rem', opacity: 0.8 }}>会話での使い方</h4>
+                                        {question.dialogue.map((line, idx) => (
+                                            <div key={idx} style={{ marginBottom: '0.5rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                                                <span style={{
+                                                    fontWeight: 'bold',
+                                                    color: line.speaker === 'You' ? '#b2ebf2' : '#fff9c4',
+                                                    minWidth: '50px',
+                                                    fontSize: '0.9rem'
+                                                }}>
+                                                    {line.speaker}:
+                                                </span>
+                                                <span style={{ fontSize: '0.9rem' }}>{line.text}</span>
+                                                <AudioButton text={line.text} size="small" />
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+
                                 <button
                                     onClick={handleNext}
                                     style={{
                                         width: '100%',
                                         padding: '1rem',
-                                        marginTop: '1rem',
+                                        marginTop: '1.5rem',
                                         backgroundColor: '#fff',
                                         color: isCorrect ? '#2e7d32' : '#c62828',
                                         border: 'none',
@@ -276,7 +311,7 @@ export default function Quiz() {
             </AnimatePresence>
 
             {/* Unlock Modal */}
-            <AnimatePresence>
+            < AnimatePresence >
                 {showUnlockModal && newUnlock && (
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -346,8 +381,9 @@ export default function Quiz() {
                             </button>
                         </motion.div>
                     </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
+                )
+                }
+            </AnimatePresence >
+        </div >
     );
 }
