@@ -93,7 +93,7 @@ export default function Quiz() {
             incrementQuizCount(); // Increment count in context
             setFinished(true);
         }
-    }, [currentIndex, questions.length, incrementQuizCount]);
+    }, [currentQuestionIndex, questions.length, incrementQuizCount]);
 
     const handleCloseUnlock = () => {
         setShowUnlockModal(false);
@@ -120,7 +120,7 @@ export default function Quiz() {
                 onPlayAgain={() => {
                     setFinished(false);
                     setHistory([]);
-                    setCurrentIndex(0);
+                    setCurrentQuestionIndex(0);
                     // Shuffle new questions
                     let qs = [];
                     if (categoryId === 'random') {
@@ -137,7 +137,8 @@ export default function Quiz() {
 
     if (questions.length === 0) return <div style={{ color: '#fff', textAlign: 'center', paddingTop: '2rem' }}>Loading...</div>;
 
-    const question = questions[currentIndex];
+    const question = questions[currentQuestionIndex];
+    if (!question) return <div style={{ color: '#fff', textAlign: 'center', paddingTop: '2rem' }}>Error loading question</div>;
 
     // Card Animation Variants
     const cardVariants = {
@@ -158,14 +159,14 @@ export default function Quiz() {
             }}>
                 <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: `${((currentIndex) / questions.length) * 100}%` }}
+                    animate={{ width: `${((currentQuestionIndex) / questions.length) * 100}%` }}
                     style={{ height: '100%', backgroundColor: 'var(--color-moon-cream)' }}
                 />
             </div>
 
             <AnimatePresence mode='wait'>
                 <motion.div
-                    key={currentIndex}
+                    key={currentQuestionIndex}
                     variants={cardVariants}
                     initial="hidden"
                     animate="visible"
