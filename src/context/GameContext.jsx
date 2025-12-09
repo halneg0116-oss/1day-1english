@@ -180,13 +180,13 @@ export function GameProvider({ children }) {
             // Map specific milestones for flavor
             let targetItemId = null;
 
-            if (quizCount === 5) targetItemId = 'plant_starter';
-            else if (quizCount === 10) targetItemId = 'coffee_set';
-            else if (quizCount === 15) targetItemId = 'cactus';
-            else if (quizCount === 20) targetItemId = 'bookshelf';
-            else if (quizCount === 25) targetItemId = 'rug';
-            else if (quizCount === 30) targetItemId = 'curtain';
-            else if (quizCount === 35) targetItemId = 'glasses';
+            if (quizCount === 5) targetItemId = 'notebook';
+            else if (quizCount === 10) targetItemId = 'coffee_cup';
+            else if (quizCount === 15) targetItemId = 'my_pen';
+            else if (quizCount === 20) targetItemId = 'dictionary';
+            else if (quizCount === 25) targetItemId = 'desk_mat';
+            else if (quizCount === 30) targetItemId = 'glasses';
+            else if (quizCount === 35) targetItemId = 'certificate';
             else {
                 // For other outcomes, find ANY locked item
                 const allItemIds = ITEMS.map(i => i.id);
