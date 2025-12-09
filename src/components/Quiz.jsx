@@ -26,10 +26,12 @@ export default function Quiz() {
         if (categoryId === 'random') {
             qs = getRandomQuestions(5);
         } else {
-            qs = getQuestionsByCategory(categoryId, 5); // 5 questions per session
+            // Pass learningState for adaptive selection
+            const learningState = state.learningState || { wrongQuestionIds: [], completedQuestionIds: [] };
+            qs = getQuestionsByCategory(categoryId, 5, learningState);
         }
         setQuestions(qs);
-    }, [categoryId]);
+    }, [categoryId]); // Run once on mount (or cat change)
 
     // Handle Unlocks
     useEffect(() => {
@@ -39,11 +41,22 @@ export default function Quiz() {
     }, [newUnlock]);
 
     const handleOptionSelect = (optionId) => {
-        if (showResult) return; // Prevent double clicks
-        setSelectedOption(optionId);
+        // ... (unchanged)
+        if (showResult) {
+            const currentQ = questions[currentQuestionIndex];
+            if (currentQ && optionId !== currentQ.correctId) {
+                setClickedWrongOption(optionId);
+            }
+            return;
+        }
 
-        const currentQ = questions[currentIndex];
+        const currentQ = questions[currentQuestionIndex];
+        if (!currentQ) return;
+
         const correct = optionId === currentQ.correctId;
+        // ...
+
+        setSelectedOption(optionId);
         setIsCorrect(correct);
         setShowResult(true);
 
@@ -53,7 +66,20 @@ export default function Quiz() {
             userChoice: optionId,
             isCorrect: correct
         }]);
+
+        if (recordResult) {
+            recordResult(currentQ.id, correct);
+        }
     };
+    // Note: I don't need to rewrite handleOptionSelect fully here if I only target the useEffect and the guard.
+    // Let's target the useEffect first.
+
+    // ...
+
+    if (questions.length === 0) return <div style={{ color: '#fff', textAlign: 'center', paddingTop: '2rem' }}>Loading...</div>;
+
+    const question = questions[currentQuestionIndex];
+    if (!question) return <div style={{ color: '#fff', textAlign: 'center', paddingTop: '2rem' }}>Error loading question</div>;
 
     const handleNext = useCallback(() => {
         setShowResult(false);

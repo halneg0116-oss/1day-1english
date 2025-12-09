@@ -33,8 +33,10 @@ export function GameProvider({ children }) {
     // Initial state
     const [state, setState] = useState(() => {
         const saved = localStorage.getItem('koala_english_data');
-        return saved ? JSON.parse(saved) : {
-            unlockedItemIds: ['desk', 'chair'], // Initial items
+        const parsed = saved ? JSON.parse(saved) : {};
+
+        return {
+            unlockedItemIds: ['desk', 'chair'],
             placedItems: [
                 { id: 'desk', x: 50, y: 50 },
                 { id: 'chair', x: 60, y: 60 }
@@ -44,7 +46,7 @@ export function GameProvider({ children }) {
                 correctCount: 0,
                 consecutiveDays: 1,
                 lastLoginDate: new Date().toISOString().split('T')[0],
-                loginDays: 1 // Total login days
+                loginDays: 1
             },
             reviewState: {
                 rememberedIds: [],
@@ -55,11 +57,13 @@ export function GameProvider({ children }) {
                 seVolume: 50,
                 notificationsEnabled: true
             },
-            // New: Adaptive Learning State
             learningState: {
                 wrongQuestionIds: [],
                 completedQuestionIds: []
-            }
+            },
+            ...parsed, // Override with saved data
+            // Ensure deep merges for critical new objects if they don't exist in parsed
+            learningState: parsed.learningState || { wrongQuestionIds: [], completedQuestionIds: [] }
         };
     });
 
