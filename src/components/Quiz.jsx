@@ -76,7 +76,34 @@ export default function Quiz() {
     };
 
     if (finished) {
-        return <QuizComplete history={history} onHome={() => navigate('/')} />;
+        const correctCount = history.filter(h => h.isCorrect).length;
+        const formattedResults = history.map(h => ({
+            question: h.question.text, // Extract text string
+            correct: h.isCorrect
+        }));
+
+        return (
+            <QuizComplete
+                totalQuestions={questions.length}
+                correctCount={correctCount}
+                results={formattedResults}
+                newUnlock={newUnlock} // Pass newUnlock from context if needed
+                onPlayAgain={() => {
+                    setFinished(false);
+                    setHistory([]);
+                    setCurrentIndex(0);
+                    // Shuffle new questions
+                    let qs = [];
+                    if (categoryId === 'random') {
+                        qs = getRandomQuestions(5);
+                    } else {
+                        qs = getQuestionsByCategory(categoryId, 5);
+                    }
+                    setQuestions(qs);
+                }}
+                categoryName={categoryId === 'random' ? 'ランダム学習' : questions[0]?.category}
+            />
+        );
     }
 
     if (questions.length === 0) return <div style={{ color: '#fff', textAlign: 'center', paddingTop: '2rem' }}>Loading...</div>;

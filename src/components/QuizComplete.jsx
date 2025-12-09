@@ -119,7 +119,7 @@ export default function QuizComplete({
                             <div style={{ flex: 1 }}>
                                 <div style={{ fontSize: '0.9rem' }}>問題 {index + 1}</div>
                                 <div style={{ fontSize: '0.8rem', opacity: 0.7 }}>
-                                    {result.question}
+                                    {typeof result.question === 'object' ? result.question.text : result.question}
                                 </div>
                             </div>
                         </motion.div>
