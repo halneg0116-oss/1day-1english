@@ -265,14 +265,31 @@ export default function Quiz() {
                                                     zIndex: 10,
                                                     backgroundColor: '#333',
                                                     color: '#fff',
-                                                    padding: '0.8rem',
-                                                    borderRadius: '8px',
+                                                    padding: '1rem',
+                                                    borderRadius: '12px',
                                                     fontSize: '0.9rem',
-                                                    boxShadow: '0 4px 10px rgba(0,0,0,0.2)'
+                                                    boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+                                                    textAlign: 'left'
                                                 }}
                                             >
                                                 <div style={{ position: 'absolute', top: '-6px', left: '20px', width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderBottom: '6px solid #333' }}></div>
-                                                💡 {option.reason || `${option.nuance} という意味なので、この文脈では少し違います。`}
+
+                                                {option.advice ? (
+                                                    // New Format: Advice + Example
+                                                    <div>
+                                                        <div style={{ fontWeight: 'bold', color: '#81d4fa', marginBottom: '0.3rem' }}>💡 {option.advice}</div>
+                                                        {option.example && (
+                                                            <div style={{ fontStyle: 'italic', opacity: 0.9, backgroundColor: 'rgba(255,255,255,0.1)', padding: '0.5rem', borderRadius: '6px' }}>
+                                                                "{option.example}"
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                ) : (
+                                                    // Fallback for old questions
+                                                    <div>
+                                                        💡 {option.reason || `${option.nuance} という意味なので、この文脈では少し異なりそうです。`}
+                                                    </div>
+                                                )}
                                             </motion.div>
                                         )}
                                     </div>

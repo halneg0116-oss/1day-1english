@@ -1248,9 +1248,30 @@ export const QUIZ_QUESTIONS = [
         situation: "会議の開始を告げる時",
         icon: '🎬',
         options: [
-            { id: 'a', text: "start", icon: '▶️', nuance: '始める（一般的）', reason: '日常会話で自然に「始める」と言いたい時はこれを使おう！' },
-            { id: 'b', text: "begin", icon: '🧐', nuance: '始める（硬め）', reason: '間違いではないけど少し硬いよ。スピーチや書き言葉で使うといいよ。' },
-            { id: 'c', text: "commence", icon: '📜', nuance: '開始する（超硬）', reason: '式典など、極めてフォーマルな場でのみ使おう。普段は避けてOK！' }
+            {
+                id: 'a',
+                text: "start",
+                icon: '▶️',
+                nuance: '始める（一般的）',
+                advice: '日常会話で「さあ始めよう」と軽く言う時に使います。',
+                example: "Let's start the party!"
+            },
+            {
+                id: 'b',
+                text: "begin",
+                icon: '🧐',
+                nuance: '始める（硬め）',
+                advice: 'スピーチや書き言葉で、少し改まって始める時に使います。',
+                example: "Shall we begin the ceremony?"
+            },
+            {
+                id: 'c',
+                text: "commence",
+                icon: '📜',
+                nuance: '開始する（超硬）',
+                advice: '式典や法的文書など、極めてフォーマルな場でのみ使います。',
+                example: "The ceremony will commence at noon."
+            }
         ],
         correctId: 'a',
         explanation: "日常的な会議ならStartでOK。Beginでも間違いではないけど、少しフォーマルな響きになるよ。"
@@ -1263,9 +1284,30 @@ export const QUIZ_QUESTIONS = [
         situation: "確信はないけどそう思う時",
         icon: '🤔',
         options: [
-            { id: 'a', text: "think", icon: '🧠', nuance: '思う（自分の意見）', reason: '自分の「意見」としてしっかり言う時はThinkを使おう。' },
-            { id: 'b', text: "guess", icon: '🎲', nuance: '推測する', reason: '根拠が薄く「たぶん〜かな」と軽く言う時にぴったりだよ。' },
-            { id: 'c', text: "believe", icon: '🙏', nuance: '信じる', reason: '強い信念や確信がある時にだけ使おう。' }
+            {
+                id: 'a',
+                text: "think",
+                icon: '🧠',
+                nuance: '思う（自分の意見）',
+                advice: '自分の「意見」として、ある程度自信を持って言う時に使います。',
+                example: "I think this plan is good."
+            },
+            {
+                id: 'b',
+                text: "guess",
+                icon: '🎲',
+                nuance: '推測する',
+                advice: '根拠が薄く「たぶん〜かな」と軽く推測する時に使います。',
+                example: "I guess he is busy today."
+            },
+            {
+                id: 'c',
+                text: "believe",
+                icon: '🙏',
+                nuance: '信じる',
+                advice: '強い信念や、確信に近い信頼がある時に使います。',
+                example: "I believe in you."
+            }
         ],
         correctId: 'b',
         explanation: "根拠がなくて「多分そうなんじゃないかな」という時はGuessがぴったり。"
@@ -1278,9 +1320,30 @@ export const QUIZ_QUESTIONS = [
         situation: "外見や様子から判断する時",
         icon: '👀',
         options: [
-            { id: 'a', text: "looks", icon: '👁️', nuance: '見える（視覚）', reason: 'パッと見の外見だけについて言いたい時のみ使おう。' },
-            { id: 'b', text: "seems", icon: '☁️', nuance: '思われる（状況）', reason: '「雰囲気からして〜っぽいな」という主観的な判断に使おう。' },
-            { id: 'c', text: "appears", icon: '✨', nuance: '見える（客観）', reason: '事実に基づいて客観的に述べたい時に使おう（少し硬いよ）。' }
+            {
+                id: 'a',
+                text: "looks",
+                icon: '👁️',
+                nuance: '見える（視覚）',
+                advice: 'パッと見の外見だけについて「〜に見える」と言う時に使います。',
+                example: "He looks happy."
+            },
+            {
+                id: 'b',
+                text: "seems",
+                icon: '☁️',
+                nuance: '思われる（状況）',
+                advice: '雰囲気や状況からして「〜っぽいな」と主観的に判断する時に使います。',
+                example: "It seems like it's going to rain."
+            },
+            {
+                id: 'c',
+                text: "appears",
+                icon: '✨',
+                nuance: '見える（客観）',
+                advice: '事実に基づいて、客観的に「〜であるようだ」と述べる時に使います。',
+                example: "He appears to be calm."
+            }
         ],
         correctId: 'b',
         explanation: "Seemsは「（なんとなく）〜のように思われる」という主観的な判断に便利だよ。"
@@ -1293,9 +1356,30 @@ export const QUIZ_QUESTIONS = [
         situation: "決断を変える時",
         icon: '🔄',
         options: [
-            { id: 'a', text: "I stopped", icon: '🛑', nuance: '動作を止めた', reason: '歩くのを止めた時などに使うよ。考えを変える時には使わないで！' },
-            { id: 'b', text: "I changed my mind", icon: '🧠', nuance: '気が変わった', reason: '「やっぱりこうする！」と思考を変えた時にまさにこれを使おう。' },
-            { id: 'c', text: "I quit", icon: '🚪', nuance: '辞める', reason: '仕事や悪い習慣をスパッと辞める時に使おう。' }
+            {
+                id: 'a',
+                text: "I stopped",
+                icon: '🛑',
+                nuance: '動作を止めた',
+                advice: '歩くのを止めた、話すのを止めた、など「動作」を中断する時に使います。',
+                example: "I stopped running."
+            },
+            {
+                id: 'b',
+                text: "I changed my mind",
+                icon: '🧠',
+                nuance: '気が変わった',
+                advice: '一度決めたことを「やっぱりこうする！」と変える時に使います。',
+                example: "I was going to eat out, but I changed my mind."
+            },
+            {
+                id: 'c',
+                text: "I quit",
+                icon: '🚪',
+                nuance: '辞める',
+                advice: '仕事や学校、あるいは悪い習慣を完全に辞める時に使います。',
+                example: "I quit smoking."
+            }
         ],
         correctId: 'b',
         explanation: "「気が変わった」は英語で Change my mind と言うんだ。よく使うよ。",
@@ -1312,9 +1396,30 @@ export const QUIZ_QUESTIONS = [
         situation: "会計を支払う時",
         icon: '💳',
         options: [
-            { id: 'a', text: "I pay", icon: '💰', nuance: '私が払う（事実）', reason: '事実を伝えるだけならOKだけど、スマートにおごるならBがおすすめ！' },
-            { id: 'b', text: "It's on me", icon: '☝️', nuance: '私のおごりだ', reason: '「ここは任せて！」とかっこよく言いたい時に使おう。' },
-            { id: 'c', text: "My treat", icon: '🎁', nuance: '私のおもてなし（やや丁寧）', reason: '「今日は私のおもてなしです」と丁寧に言いたい時に便利だよ。' }
+            {
+                id: 'a',
+                text: "I pay",
+                icon: '💰',
+                nuance: '私が払う（事実）',
+                advice: '事実として「私が払います」と伝える時に使いますが、おごる時の決まり文句ではありません。',
+                example: "I pay the bills every month."
+            },
+            {
+                id: 'b',
+                text: "It's on me",
+                icon: '☝️',
+                nuance: '私のおごりだ',
+                advice: '「ここは任せて！」と友人にかっこよくおごる時に使います。',
+                example: "Lunch is on me today."
+            },
+            {
+                id: 'c',
+                text: "My treat",
+                icon: '🎁',
+                nuance: '私のおもてなし',
+                advice: '「今日は私のおもてなしです」と、少し丁寧に、あるいはデートなどで使います。',
+                example: "Let's go for dinner. My treat."
+            }
         ],
         correctId: 'b',
         explanation: "Barなどで「ここは俺が持つよ」という時に It's on me と言うとかっこいい！",
