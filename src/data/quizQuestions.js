@@ -1048,40 +1048,6 @@ export const QUIZ_QUESTIONS = [
         correctId: 'b',
         explanation: "Reportは「正式に報告する」という意味。ビジネスで上司やクライアントに報告する時に使うよ。"
     },
-];
-
-// ランダムに問題を取得する関数
-export function getRandomQuestions(count = 5) {
-    const shuffled = [...QUIZ_QUESTIONS].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, Math.min(count, QUIZ_QUESTIONS.length));
-}
-
-// カテゴリ別に問題を取得する関数
-export function getQuestionsByCategory(categoryId, count = 5) {
-    const categoryQuestions = QUIZ_QUESTIONS.filter(q => q.category === categoryId);
-    const shuffled = [...categoryQuestions].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, Math.min(count, categoryQuestions.length));
-}
-
-// 特定のIDの問題を取得
-export function getQuestionById(id) {
-    return QUIZ_QUESTIONS.find(q => q.id === id);
-}
-
-// カテゴリごとの問題数を取得
-export function getCategoryQuestionCount(categoryId) {
-    return QUIZ_QUESTIONS.filter(q => q.category === categoryId).length;
-}
-
-// 全カテゴリの統計を取得
-export function getAllCategoryStats() {
-    const categories = ['verbs', 'adjectives', 'prepositions', 'idioms', 'business'];
-    return categories.map(catId => ({
-        id: catId,
-        totalQuestions: getCategoryQuestionCount(catId)
-    }));
-}
-
     // ========== NATIVE / CASUAL CATEGORY ==========
     {
         id: 1001,
@@ -1233,3 +1199,37 @@ export function getAllCategoryStats() {
         correctId: 'a',
         explanation: "Sickは本来「病気」だけど、スラングでは「最高」「ヤバい（かっこいい）」という意味で若者がよく使うよ。"
     }
+];
+
+// ランダムに問題を取得する関数
+export function getRandomQuestions(count = 5) {
+    const shuffled = [...QUIZ_QUESTIONS].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, Math.min(count, QUIZ_QUESTIONS.length));
+}
+
+// カテゴリ別に問題を取得する関数
+export function getQuestionsByCategory(categoryId, count = 5) {
+    const categoryQuestions = QUIZ_QUESTIONS.filter(q => q.category === categoryId);
+    const shuffled = [...categoryQuestions].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, Math.min(count, categoryQuestions.length));
+}
+
+// 特定のIDの問題を取得
+export function getQuestionById(id) {
+    return QUIZ_QUESTIONS.find(q => q.id === id);
+}
+
+// カテゴリごとの問題数を取得
+export function getCategoryQuestionCount(categoryId) {
+    return QUIZ_QUESTIONS.filter(q => q.category === categoryId).length;
+}
+
+// 全カテゴリの統計を取得
+export function getAllCategoryStats() {
+    const categories = ['verbs', 'adjectives', 'prepositions', 'idioms', 'business'];
+    return categories.map(catId => ({
+        id: catId,
+        totalQuestions: getCategoryQuestionCount(catId)
+    }));
+}
+
