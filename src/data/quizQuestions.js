@@ -1248,9 +1248,9 @@ export const QUIZ_QUESTIONS = [
         situation: "会議の開始を告げる時",
         icon: '🎬',
         options: [
-            { id: 'a', text: "start", icon: '▶️', nuance: '始める（一般的）', reason: 'Startは最も一般的な「始める」です。' },
-            { id: 'b', text: "begin", icon: '🧐', nuance: '始める（硬め）', reason: 'Beginは少し硬い表現です。日常会話ではStartが自然です。' },
-            { id: 'c', text: "commence", icon: '📜', nuance: '開始する（超硬）', reason: 'Commenceは式典などで使う非常に硬い言葉です。' }
+            { id: 'a', text: "start", icon: '▶️', nuance: '始める（一般的）', reason: '日常会話で自然に「始める」と言いたい時はこれを使おう！' },
+            { id: 'b', text: "begin", icon: '🧐', nuance: '始める（硬め）', reason: '間違いではないけど少し硬いよ。スピーチや書き言葉で使うといいよ。' },
+            { id: 'c', text: "commence", icon: '📜', nuance: '開始する（超硬）', reason: '式典など、極めてフォーマルな場でのみ使おう。普段は避けてOK！' }
         ],
         correctId: 'a',
         explanation: "日常的な会議ならStartでOK。Beginでも間違いではないけど、少しフォーマルな響きになるよ。"
@@ -1263,9 +1263,9 @@ export const QUIZ_QUESTIONS = [
         situation: "確信はないけどそう思う時",
         icon: '🤔',
         options: [
-            { id: 'a', text: "think", icon: '🧠', nuance: '思う（自分の意見）', reason: 'Thinkは自分の意見として「思う」時に使います。' },
-            { id: 'b', text: "guess", icon: '🎲', nuance: '推測する', reason: 'Guessは根拠が薄い「推測」です。' },
-            { id: 'c', text: "believe", icon: '🙏', nuance: '信じる', reason: 'Believeは強い信念や確信がある時に使います。' }
+            { id: 'a', text: "think", icon: '🧠', nuance: '思う（自分の意見）', reason: '自分の「意見」としてしっかり言う時はThinkを使おう。' },
+            { id: 'b', text: "guess", icon: '🎲', nuance: '推測する', reason: '根拠が薄く「たぶん〜かな」と軽く言う時にぴったりだよ。' },
+            { id: 'c', text: "believe", icon: '🙏', nuance: '信じる', reason: '強い信念や確信がある時にだけ使おう。' }
         ],
         correctId: 'b',
         explanation: "根拠がなくて「多分そうなんじゃないかな」という時はGuessがぴったり。"
@@ -1278,9 +1278,9 @@ export const QUIZ_QUESTIONS = [
         situation: "外見や様子から判断する時",
         icon: '👀',
         options: [
-            { id: 'a', text: "looks", icon: '👁️', nuance: '見える（視覚）', reason: 'Looksはパッと見の外見について言及する時に使います。' },
-            { id: 'b', text: "seems", icon: '☁️', nuance: '思われる（状況）', reason: 'Seemsは状況や雰囲気を含めた主観的な「〜のようだ」です。' },
-            { id: 'c', text: "appears", icon: '✨', nuance: '見える（客観）', reason: 'Appearsは事実に基づいて客観的に見える時に使います。' }
+            { id: 'a', text: "looks", icon: '👁️', nuance: '見える（視覚）', reason: 'パッと見の外見だけについて言いたい時のみ使おう。' },
+            { id: 'b', text: "seems", icon: '☁️', nuance: '思われる（状況）', reason: '「雰囲気からして〜っぽいな」という主観的な判断に使おう。' },
+            { id: 'c', text: "appears", icon: '✨', nuance: '見える（客観）', reason: '事実に基づいて客観的に述べたい時に使おう（少し硬いよ）。' }
         ],
         correctId: 'b',
         explanation: "Seemsは「（なんとなく）〜のように思われる」という主観的な判断に便利だよ。"
@@ -1293,9 +1293,9 @@ export const QUIZ_QUESTIONS = [
         situation: "決断を変える時",
         icon: '🔄',
         options: [
-            { id: 'a', text: "I stopped", icon: '🛑', nuance: '動作を止めた', reason: 'Stopは動作を停止することです。考えを変える時は使いません。' },
-            { id: 'b', text: "I changed my mind", icon: '🧠', nuance: '気が変わった', reason: '直訳で「心を変えた」＝気が変わった、になります。' },
-            { id: 'c', text: "I quit", icon: '🚪', nuance: '辞める', reason: 'Quitは仕事や習慣を辞める時に使います。' }
+            { id: 'a', text: "I stopped", icon: '🛑', nuance: '動作を止めた', reason: '歩くのを止めた時などに使うよ。考えを変える時には使わないで！' },
+            { id: 'b', text: "I changed my mind", icon: '🧠', nuance: '気が変わった', reason: '「やっぱりこうする！」と思考を変えた時にまさにこれを使おう。' },
+            { id: 'c', text: "I quit", icon: '🚪', nuance: '辞める', reason: '仕事や悪い習慣をスパッと辞める時に使おう。' }
         ],
         correctId: 'b',
         explanation: "「気が変わった」は英語で Change my mind と言うんだ。よく使うよ。",
@@ -1312,9 +1312,9 @@ export const QUIZ_QUESTIONS = [
         situation: "会計を支払う時",
         icon: '💳',
         options: [
-            { id: 'a', text: "I pay", icon: '💰', nuance: '私が払う（事実）', reason: '文法的には合っていますが、おごる時の決まり文句ではありません。' },
-            { id: 'b', text: "It's on me", icon: '☝️', nuance: '私のおごりだ', reason: '「私のツケにしておいて」というニュアンスから来ています。' },
-            { id: 'c', text: "My treat", icon: '🎁', nuance: '私のおもてなし（やや丁寧）', reason: 'My treatも正解ですが、It\'s on meの方がよりカジュアルによく使われます。' }
+            { id: 'a', text: "I pay", icon: '💰', nuance: '私が払う（事実）', reason: '事実を伝えるだけならOKだけど、スマートにおごるならBがおすすめ！' },
+            { id: 'b', text: "It's on me", icon: '☝️', nuance: '私のおごりだ', reason: '「ここは任せて！」とかっこよく言いたい時に使おう。' },
+            { id: 'c', text: "My treat", icon: '🎁', nuance: '私のおもてなし（やや丁寧）', reason: '「今日は私のおもてなしです」と丁寧に言いたい時に便利だよ。' }
         ],
         correctId: 'b',
         explanation: "Barなどで「ここは俺が持つよ」という時に It's on me と言うとかっこいい！",
@@ -1354,13 +1354,15 @@ export function getRandomQuestions(count = 5) {
 export function getQuestionsByCategory(categoryId, count = 5, learningState = null) {
     const categoryQuestions = QUIZ_QUESTIONS.filter(q => q.category === categoryId);
 
+    // Safety check: ensure arrays exist even if learningState gives partial data
+    const wrongQuestionIds = learningState?.wrongQuestionIds || [];
+    const completedQuestionIds = learningState?.completedQuestionIds || [];
+
     if (!learningState) {
         // Fallback to simple random if no state provided
         const shuffled = [...categoryQuestions].sort(() => Math.random() - 0.5);
         return shuffled.slice(0, Math.min(count, categoryQuestions.length));
     }
-
-    const { wrongQuestionIds, completedQuestionIds } = learningState;
 
     // 1. Prioritize Wrong Questions (Review)
     const wrongQuestions = categoryQuestions.filter(q => wrongQuestionIds.includes(q.id));
