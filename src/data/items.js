@@ -1,6 +1,6 @@
 export const ITEMS = [
     {
-        id: 'cactus',
+        id: 'my_pen',
         name: 'お気に入りのペン',
         type: 'tool',
         icon: '✒️',
@@ -8,7 +8,7 @@ export const ITEMS = [
         unlockCondition: 'login_3_days'
     },
     {
-        id: 'bookshelf',
+        id: 'dictionary',
         name: '英語辞書',
         type: 'book',
         icon: '📖',
@@ -16,7 +16,15 @@ export const ITEMS = [
         unlockCondition: 'login_7_days'
     },
     {
-        id: 'rug',
+        id: 'notebook',
+        name: '学習ノート',
+        type: 'tool',
+        icon: '📓',
+        description: '日々の努力を記録する。',
+        unlockCondition: 'quiz_1'
+    },
+    {
+        id: 'desk_mat',
         name: 'デスクマット',
         type: 'furniture',
         icon: '🗒️',
@@ -24,7 +32,7 @@ export const ITEMS = [
         unlockCondition: 'login_14_days'
     },
     {
-        id: 'coffee_set',
+        id: 'coffee_cup',
         name: 'マイ水筒',
         type: 'tool',
         icon: '🥤',
@@ -32,7 +40,7 @@ export const ITEMS = [
         unlockCondition: 'quiz_10'
     },
     {
-        id: 'curtain',
+        id: 'certificate',
         name: '修了証明書',
         type: 'certificate',
         icon: '📜',
@@ -47,13 +55,5 @@ export const ITEMS = [
         description: 'かけると集中できる。',
         unlockCondition: 'review_100'
     },
-    // MVP specific items for immediate gratification
-    {
-        id: 'plant_starter',
-        name: 'はじめてのノート',
-        type: 'tool',
-        icon: '📓',
-        description: '最初のレッスンを終えた記念。',
-        unlockCondition: 'quiz_1'
-    }
+
 ];

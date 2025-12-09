@@ -1081,3 +1081,155 @@ export function getAllCategoryStats() {
         totalQuestions: getCategoryQuestionCount(catId)
     }));
 }
+
+    // ========== NATIVE / CASUAL CATEGORY ==========
+    {
+        id: 1001,
+        category: 'native',
+        text: "了解した！ (カジュアルに)",
+        englishText: "I'm down",
+        situation: "友達の提案に賛成する時",
+        icon: '👍',
+        options: [
+            { id: 'a', text: "I understand", icon: '🤔', nuance: '理解した' },
+            { id: 'b', text: "I'm down", icon: '👇', nuance: '乗った！' },
+            { id: 'c', text: "I agree", icon: '🤝', nuance: '賛成する' }
+        ],
+        correctId: 'b',
+        explanation: "I'm downは「賛成する」「参加する」という意味の軽いスラング。友達との会話でよく使うよ。"
+    },
+    {
+        id: 1002,
+        category: 'native',
+        text: "ごめん、私のミスだ",
+        englishText: "My bad",
+        situation: "軽い失敗を謝る時",
+        icon: '🙏',
+        options: [
+            { id: 'a', text: "I'm sorry", icon: '🙇', nuance: 'ごめんなさい' },
+            { id: 'b', text: "My bad", icon: '😅', nuance: 'わりぃ！' },
+            { id: 'c', text: "Excuse me", icon: '🙋', nuance: '失礼' }
+        ],
+        correctId: 'b',
+        explanation: "My badは「あ、ごめん」「私のミス」という軽い謝罪。深刻な時には使わないでね。"
+    },
+    {
+        id: 1003,
+        category: 'native',
+        text: "気にしないで！",
+        englishText: "No worries",
+        situation: "謝られたり、お礼を言われた時",
+        icon: '😉',
+        options: [
+            { id: 'a', text: "Don't mind", icon: '🙅', nuance: '和製英語気味' },
+            { id: 'b', text: "No worries", icon: '✨', nuance: '問題ないよ' },
+            { id: 'c', text: "You are welcome", icon: '🎩', nuance: 'どういたしまして' }
+        ],
+        correctId: 'b',
+        explanation: "No worriesは「全然大丈夫」「気にしないで」という、とても便利な万能フレーズだよ。"
+    },
+    {
+        id: 1004,
+        category: 'native',
+        text: "もちろん！ (強く肯定)",
+        englishText: "You bet",
+        situation: "相手の依頼や感謝に対して",
+        icon: '💪',
+        options: [
+            { id: 'a', text: "Of course", icon: '🙆', nuance: 'もちろん' },
+            { id: 'b', text: "You bet", icon: '🎰', nuance: '任せて/どういたしまして' },
+            { id: 'c', text: "Yes", icon: '⭕', nuance: 'はい' }
+        ],
+        correctId: 'b',
+        explanation: "You betは「もちろん」「どういたしまして」という意味。自信を持って答える時に使おう。"
+    },
+    {
+        id: 1005,
+        category: 'native',
+        text: "上手くいくといいね (幸運を祈る)",
+        englishText: "Fingers crossed",
+        situation: "良い結果を願う時",
+        icon: '🤞',
+        options: [
+            { id: 'a', text: "Good luck", icon: '🍀', nuance: '幸運を' },
+            { id: 'b', text: "Fingers crossed", icon: '🤞', nuance: '祈ってるよ' },
+            { id: 'c', text: "Hope so", icon: '🙏', nuance: 'そう願う' }
+        ],
+        correctId: 'b',
+        explanation: "Fingers crossedは指をクロスさせて幸運を祈るジェスチャーから。「上手くいきますように」という意味だよ。"
+    },
+    {
+        id: 1006,
+        category: 'native',
+        text: "ちょっと聞いて (注目して)",
+        englishText: "Heads up",
+        situation: "事前に知らせや警告をする時",
+        icon: '⚠️',
+        options: [
+            { id: 'a', text: "Listen", icon: '👂', nuance: '聞いて' },
+            { id: 'b', text: "Look", icon: '👀', nuance: '見て' },
+            { id: 'c', text: "Heads up", icon: '🗣️', nuance: '知らせ/警告' }
+        ],
+        correctId: 'c',
+        explanation: "Heads upは「事前の知らせ」「警告」という意味。「ちょっと言っておくけど」という感じで使うよ。"
+    },
+    {
+        id: 1007,
+        category: 'native',
+        text: "いっぱいいっぱいです (忙しすぎて)",
+        englishText: "I'm swamped",
+        situation: "仕事などが忙殺されている時",
+        icon: '😵',
+        options: [
+            { id: 'a', text: "I'm busy", icon: '🏃', nuance: '忙しい' },
+            { id: 'b', text: "I'm swamped", icon: '🌊', nuance: '沼にハマった位忙しい' },
+            { id: 'c', text: "I'm full", icon: '🈵', nuance: 'お腹いっぱい' }
+        ],
+        correctId: 'b',
+        explanation: "Swampedは「沼に沈む」こと。仕事などが山積みで身動きが取れないくらい忙しい時に使うよ。"
+    },
+    {
+        id: 1008,
+        category: 'native',
+        text: "今日はもう終わりにしよう",
+        englishText: "Call it a day",
+        situation: "仕事を切り上げる時",
+        icon: '🌙',
+        options: [
+            { id: 'a', text: "Finish work", icon: '🔚', nuance: '仕事を終える' },
+            { id: 'b', text: "Call it a day", icon: '📢', nuance: '今日はここまで' },
+            { id: 'c', text: "Go home", icon: '🏠', nuance: '帰る' }
+        ],
+        correctId: 'b',
+        explanation: "Call it a dayは「今日はこれで終わりにする」という決まり文句。残業を切り上げる時にぴったり。"
+    },
+    {
+        id: 1009,
+        category: 'native',
+        text: "なんとなく・直感で",
+        englishText: "Play it by ear",
+        situation: "計画を決めずに流れでやる時",
+        icon: '👂',
+        options: [
+            { id: 'a', text: "No plan", icon: '📝', nuance: '無計画' },
+            { id: 'b', text: "Play it by ear", icon: '🎶', nuance: '出たとこ勝負で' },
+            { id: 'c', text: "Just do it", icon: '🏃', nuance: 'とりあえずやる' }
+        ],
+        correctId: 'b',
+        explanation: "Play it by earは、楽譜を見ずに耳コピで演奏することから、「臨機応変にやる」「様子を見て決める」という意味。"
+    },
+    {
+        id: 1010,
+        category: 'native',
+        text: "最高！ (スラング)",
+        englishText: "It's sick",
+        situation: "すごくカッコいいものを見た時",
+        icon: '🤩',
+        options: [
+            { id: 'a', text: "It's sick", icon: '🤒', nuance: 'ヤバい（良い意味）' },
+            { id: 'b', text: "It's good", icon: '👍', nuance: '良い' },
+            { id: 'c', text: "It's bad", icon: '👎', nuance: '悪い' }
+        ],
+        correctId: 'a',
+        explanation: "Sickは本来「病気」だけど、スラングでは「最高」「ヤバい（かっこいい）」という意味で若者がよく使うよ。"
+    }

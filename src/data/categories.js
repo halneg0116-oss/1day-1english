@@ -22,10 +22,17 @@ export const CATEGORIES = [
     },
     {
         id: 'idioms',
-        name: '慣用句・表現',
-        icon: '💬',
-        description: 'よく使う自然な表現',
-        color: '#96CEB4'
+        name: '熟語・慣用句',
+        icon: '💎',
+        description: '表現の幅を広げよう',
+        color: '#FFD93D'
+    },
+    {
+        id: 'native',
+        name: 'ネイティブ表現',
+        icon: '😎',
+        description: '生きた英語を学ぼう',
+        color: '#FF6B6B'
     },
     {
         id: 'business',

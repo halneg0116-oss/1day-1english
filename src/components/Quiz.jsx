@@ -118,10 +118,10 @@ export default function Quiz() {
     };
 
     return (
-        <div style={{ maxWidth: '600px', margin: '0 auto', padding: '1rem' }}>
+        <div style={{ maxWidth: '600px', margin: '0 auto', padding: '0.5rem 1rem' }}>
             {/* Progress Bar */}
             <div style={{
-                marginBottom: '2rem',
+                marginBottom: '1rem',
                 backgroundColor: 'rgba(255,255,255,0.2)',
                 borderRadius: '10px',
                 height: '6px',
@@ -147,34 +147,34 @@ export default function Quiz() {
                     <div style={{
                         backgroundColor: '#fff',
                         borderRadius: '20px',
-                        padding: '2rem',
+                        padding: '1.5rem',
                         boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-                        marginBottom: '2rem',
+                        marginBottom: '1rem',
                         textAlign: 'center',
                         color: 'var(--color-night-navy)'
                     }}>
-                        <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>
+                        <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
                             {question.icon}
                         </div>
-                        <h2 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', lineHeight: 1.4 }}>
+                        <h2 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', lineHeight: 1.3 }}>
                             {question.text}
                         </h2>
 
                         {/* Situation nuance */}
                         <div style={{
-                            fontSize: '0.9rem',
+                            fontSize: '0.8rem',
                             color: '#666',
                             backgroundColor: '#f0f4f8',
-                            padding: '0.5rem 1rem',
-                            borderRadius: '20px',
+                            padding: '0.3rem 0.8rem',
+                            borderRadius: '15px',
                             display: 'inline-block',
-                            marginBottom: '1rem'
+                            marginBottom: '0.5rem'
                         }}>
                             {question.situation}
                         </div>
 
                         {/* Options */}
-                        <div style={{ display: 'grid', gap: '1rem', marginTop: '1rem' }}>
+                        <div style={{ display: 'grid', gap: '0.8rem', marginTop: '0.5rem' }}>
                             {question.options.map((option) => {
                                 let bgColor = '#f8f9fa';
                                 let borderColor = 'transparent';

@@ -42,10 +42,10 @@ export default function Review() {
                 <h2>今日の復習は完了！</h2>
                 <p>また明日も頑張ろう。</p>
                 <button
-                    onClick={() => window.location.reload()} // Simple reload to reset for demo
+                    onClick={() => window.location.href = '/'}
                     style={{ marginTop: '2rem', padding: '1rem', borderRadius: '8px', border: 'none', background: 'rgba(255,255,255,0.2)', color: '#fff' }}
                 >
-                    もう一度（デモ用リセット）
+                    ホームに戻る
                 </button>
             </div>
         );

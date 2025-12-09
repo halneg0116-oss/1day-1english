@@ -58,7 +58,7 @@ export default function Layout() {
             />
             <header style={{ padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'var(--color-moon-cream)' }}>
-                    📚 Natsumu English
+                    📚 Kum English
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                     <div style={{
