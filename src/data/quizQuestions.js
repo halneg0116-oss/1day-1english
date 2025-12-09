@@ -9,9 +9,9 @@ export const QUIZ_QUESTIONS = [
         situation: "スクリーンで映画を楽しんでいる",
         icon: '🎬',
         options: [
-            { id: 'a', text: 'Look', icon: '🔍', nuance: '視線を向ける' },
-            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る' },
-            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う' }
+            { id: 'a', text: 'Look', icon: '🔍', nuance: '視線を向ける', advice: '静止している物をじっと見る時に使います。', example: "Look at this picture." },
+            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る', advice: '意図せずに自然と目に入ってくる時に使います。', example: "I see a bird in the tree." },
+            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う', advice: '動いている物を注意深く見る時に使います。', example: "I watch TV every day." }
         ],
         correctId: 'c',
         explanation: "Watchは「動いているものを目で追う」というニュアンスだよ。映画やスポーツ観戦に使われるね。"
@@ -24,9 +24,9 @@ export const QUIZ_QUESTIONS = [
         situation: "窓から美しい景色が自然と目に入ってくる",
         icon: '🏔️',
         options: [
-            { id: 'a', text: 'Look', icon: '🔍', nuance: '視線を向ける' },
-            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る' },
-            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う' }
+            { id: 'a', text: 'Look', icon: '🔍', nuance: '視線を向ける', advice: '「見て！」と何かに視線を向けさせる時に使います。', example: "Look at the mountains!" },
+            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る', advice: '目を開けていれば自然と入ってくる、そんな感覚の時に使います。', example: "Can you see the moon?" },
+            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う', advice: '変化するものを観察する時に使います。', example: "Watch the magician carefully." }
         ],
         correctId: 'b',
         explanation: "Seeは「自然と視界に入ってくる」状態を表すよ。意識しなくても見えているんだ。"
@@ -39,9 +39,9 @@ export const QUIZ_QUESTIONS = [
         situation: "迷子にならないように地図をじっと見る",
         icon: '🗺️',
         options: [
-            { id: 'a', text: 'Look at', icon: '🔍', nuance: '視線を向ける' },
-            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る' },
-            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う' }
+            { id: 'a', text: 'Look at', icon: '🔍', nuance: '視線を向ける', advice: '意識的に視線を向けて、情報を得ようとする時に使います。', example: "Please look at page 5." },
+            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る', advice: '会う、わかる、などの意味で使うことが多いです。', example: "I see what you mean." },
+            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う', advice: '動きや変化を見守る時に使います。', example: "Watch your step!" }
         ],
         correctId: 'a',
         explanation: "Look atは「意識的に視線を向ける」動作。地図や写真など、静止しているものを見る時に使うよ。"
@@ -54,9 +54,9 @@ export const QUIZ_QUESTIONS = [
         situation: "イヤホンで好きな曲を聴いている",
         icon: '🎵',
         options: [
-            { id: 'a', text: 'Listen to', icon: '👂', nuance: '耳を傾ける' },
-            { id: 'b', text: 'Hear', icon: '🔔', nuance: '聞こえてくる' },
-            { id: 'c', text: 'Sound', icon: '🔊', nuance: '音がする' }
+            { id: 'a', text: 'Listen to', icon: '👂', nuance: '耳を傾ける', advice: '意識して内容を聴こうとする時に使います。', example: "Listen to the teacher." },
+            { id: 'b', text: 'Hear', icon: '🔔', nuance: '聞こえてくる', advice: '自然と耳に入ってくる音に対して使います。', example: "I can hear the wind." },
+            { id: 'c', text: 'Sound', icon: '🔊', nuance: '音がする', advice: '「〜のように聞こえる（思える）」という判断に使います。', example: "That sounds great!" }
         ],
         correctId: 'a',
         explanation: "Listen toは「意識して耳を傾ける」こと。音楽や人の話を聴く時に使うよ。"
@@ -69,9 +69,9 @@ export const QUIZ_QUESTIONS = [
         situation: "窓の外から鳥の声が自然と聞こえてくる",
         icon: '🐦',
         options: [
-            { id: 'a', text: 'Listen to', icon: '👂', nuance: '耳を傾ける' },
-            { id: 'b', text: 'Hear', icon: '🔔', nuance: '聞こえてくる' },
-            { id: 'c', text: 'Sound', icon: '🔊', nuance: '音がする' }
+            { id: 'a', text: 'Listen to', icon: '👂', nuance: '耳を傾ける', advice: '集中して聴く時に使います。', example: "Listen carefully." },
+            { id: 'b', text: 'Hear', icon: '🔔', nuance: '聞こえてくる', advice: '向こうから音がやってくる感覚の時に使います。', example: "Did you hear that noise?" },
+            { id: 'c', text: 'Sound', icon: '🔊', nuance: '音がする', advice: '音そのものの質や印象を言う時に使います。', example: "The alarm sounds loud." }
         ],
         correctId: 'b',
         explanation: "Hearは「自然と耳に入ってくる」状態。意識しなくても聞こえる音に使うよ。"
@@ -84,9 +84,9 @@ export const QUIZ_QUESTIONS = [
         situation: "スタジアムで選手の動きを追っている",
         icon: '⚽',
         options: [
-            { id: 'a', text: 'Look at', icon: '🔍', nuance: '視線を向ける' },
-            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る' },
-            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う' }
+            { id: 'a', text: 'Look at', icon: '🔍', nuance: '視線を向ける', advice: '一点に視線を向ける時に使います。', example: "Look at the ball." },
+            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る', advice: '結果を見届ける、という意味でも使われます。', example: "Wait and see." },
+            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う', advice: '試合や映画など、動きのあるものを楽しむ時に使います。', example: "We watched the game yesterday." }
         ],
         correctId: 'c',
         explanation: "Watchはスポーツ観戦にもぴったり。動いている選手たちを目で追うイメージだね。"
@@ -99,9 +99,9 @@ export const QUIZ_QUESTIONS = [
         situation: "夜空を見上げて星を探している",
         icon: '✨',
         options: [
-            { id: 'a', text: 'Look at', icon: '🔍', nuance: '視線を向ける' },
-            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る' },
-            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う' }
+            { id: 'a', text: 'Look at', icon: '🔍', nuance: '視線を向ける', advice: '美しいものや興味のあるものをじっと見る時に使います。', example: "Look at the stars." },
+            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る', advice: 'ただ目に見えている状態の時に使います。', example: "I see a shooting star." },
+            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う', advice: '星の動き（流星群など）を観察するなら使えます。', example: "Watching for shooting stars." }
         ],
         correctId: 'a',
         explanation: "Look atは静止している景色をじっと見る時に使うよ。星空を眺めるのにぴったりだね。"
@@ -114,9 +114,9 @@ export const QUIZ_QUESTIONS = [
         situation: "カフェで友達の悩みに耳を傾けている",
         icon: '☕',
         options: [
-            { id: 'a', text: 'Listen to', icon: '👂', nuance: '耳を傾ける' },
-            { id: 'b', text: 'Hear', icon: '🔔', nuance: '聞こえてくる' },
-            { id: 'c', text: 'Sound', icon: '🔊', nuance: '音がする' }
+            { id: 'a', text: 'Listen to', icon: '👂', nuance: '耳を傾ける', advice: '相手の話を理解しようと、集中して聞く時に使います。', example: "I'm listening to you." },
+            { id: 'b', text: 'Hear', icon: '🔔', nuance: '聞こえてくる', advice: '単に声が物理的に届いているか確認する時に使います。', example: "Can you hear me?" },
+            { id: 'c', text: 'Sound', icon: '🔊', nuance: '音がする', advice: '「〜のように聞こえる」という印象を言う時に使います。', example: "That sounds fun." }
         ],
         correctId: 'a',
         explanation: "Listen toは会話や話を「注意して聴く」時に使うよ。相手に集中しているイメージだね。"
@@ -129,9 +129,9 @@ export const QUIZ_QUESTIONS = [
         situation: "突然ゴロゴロという音が聞こえてきた",
         icon: '⚡',
         options: [
-            { id: 'a', text: 'Listen to', icon: '👂', nuance: '耳を傾ける' },
-            { id: 'b', text: 'Hear', icon: '🔔', nuance: '聞こえてくる' },
-            { id: 'c', text: 'Sound', icon: '🔊', nuance: '音がする' }
+            { id: 'a', text: 'Listen to', icon: '👂', nuance: '耳を傾ける', advice: '耳を澄まして音を探す時に使います。', example: "Listen for the sound." },
+            { id: 'b', text: 'Hear', icon: '🔔', nuance: '聞こえてくる', advice: '突然の音や、意図せず聞こえた音に対して使います。', example: "I heard a loud bang." },
+            { id: 'c', text: 'Sound', icon: '🔊', nuance: '音がする', advice: '音の様子だけを説明する時に使います。', example: "It sounds like thunder." }
         ],
         correctId: 'b',
         explanation: "Hearは予期せず聞こえてくる音に使うよ。雷みたいに突然の音にぴったりだね。"
@@ -144,9 +144,9 @@ export const QUIZ_QUESTIONS = [
         situation: "公園で遊んでいる赤ちゃんが視界に入った",
         icon: '👶',
         options: [
-            { id: 'a', text: 'Look at', icon: '🔍', nuance: '視線を向ける' },
-            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る' },
-            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う' }
+            { id: 'a', text: 'Look at', icon: '🔍', nuance: '視線を向ける', advice: '「見て！」と注意を引く時に使います。', example: "Look at that baby." },
+            { id: 'b', text: 'See', icon: '👀', nuance: '視界に入る', advice: 'ある事態を目撃した、という時に使います。', example: "I saw the accident." },
+            { id: 'c', text: 'Watch', icon: '📺', nuance: '動くものを追う', advice: 'ベビーシッターとして「見守る」時はWatchを使います。', example: "Can you watch the baby?" }
         ],
         correctId: 'b',
         explanation: "Seeは「目に入ってくる」状態。赤ちゃんの姿が自然と見えたという感じだね。"
